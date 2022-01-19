@@ -1,0 +1,17 @@
+---
+helmDefaults:
+  atomic: true
+  force: false
+  timeout: 120
+  wait: true
+
+releases:
+  - name: postgres
+    chart: bitnami/postgresql
+    version: 10.16.1
+    namespace: default
+      #    values:
+      #      - "../config/default/postgres.yaml"
+      #    set:
+      #      - name: namespace
+      #        value: default
