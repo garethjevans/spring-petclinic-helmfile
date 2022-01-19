@@ -1,16 +1,16 @@
 ---
 helmDefaults:
-  atomic: true
+  atomic: false
   force: false
-  timeout: 120
+  timeout: 60
   wait: true
 
 releases:
   - name: spring-petclinic
     chart: ../charts/spring-petclinic
     namespace: default
-      #    values:
-      #      - "../config/default/jenkins-config.yaml"
-      #    set:
-      #      - name: namespace
-      #        value: default
+    values:
+      - "../charts/spring-petclinic/values.yaml"
+    set:
+      - name: namespace
+        value: default
