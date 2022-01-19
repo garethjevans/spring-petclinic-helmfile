@@ -10,3 +10,5 @@ releases:
     chart: bitnami/postgresql
     version: 10.16.1
     namespace: default
+    values:
+      - "../config/postgres.yaml"
