@@ -21,3 +21,13 @@ If you don't already have the helm-diff plugin installed, you'll need to add it 
 ```
 helm plugin install https://github.com/databus23/helm-diff
 ```
+
+## Useful Commands
+
+```
+helmfile diff
+```
+
+```
+helmfile apply
+```
