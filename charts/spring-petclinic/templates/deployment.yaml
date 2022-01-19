@@ -49,6 +49,14 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             {{- toYaml .Values.env | nindent 12 }}
+          volumeMounts:
+            - name: postgresql-binding
+              mountPath: "/platform/bindings/postgresql"
+              readOnly: true
+      volumes:
+        - name: postgresql-binding
+          secret:
+            secretName: {{ include "spring-petclinic.fullname" . }}-secret
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

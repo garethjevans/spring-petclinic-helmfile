@@ -71,15 +71,11 @@ resources: {}
 env: 
   - name: SPRING_PROFILES_ACTIVE
     value: postgres
-  - name: POSTGRES_URL
-    value: jdbc:postgresql://postgres-postgresql.default.svc.cluster.local/petclinic
-  - name: POSTGRES_USER
-    value: postgres
-  - name: POSTGRES_PASS
-    valueFrom:
-      secretKeyRef:
-        name: postgres-postgresql
-        key: postgresql-password
+
+db:
+  url: jdbc:postgresql://postgres-postgresql.default.svc.cluster.local/petclinic
+  username: postgres
+  password: petclinic
 
 autoscaling:
   enabled: false
