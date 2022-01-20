@@ -71,11 +71,15 @@ resources: {}
 env: 
   - name: SPRING_PROFILES_ACTIVE
     value: postgres
+  - name: SERVICE_BINDING_ROOT
+    value: /platform/bindings
 
 db:
-  url: jdbc:postgresql://postgres-postgresql.default.svc.cluster.local/petclinic
+  host: postgres-postgresql.default.svc.cluster.local
   username: postgres
   password: petclinic
+  port: "5432"
+  database: petclinic
 
 autoscaling:
   enabled: false
